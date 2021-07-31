@@ -1,0 +1,34 @@
+.orderWrapper {
+    background-color: #f7f7f7;
+    margin: 8px 16px;
+    padding: 12px;
+    border-radius: 4px;
+}
+.orderWrapper:active {
+    opacity: .6;
+}
+.orderTopLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderTitle {
+    font-size: 18px;
+}
+
+.orderNotClosed {
+    color: #FF3A3A;
+    font-size: 14px;
+}
+
+.orderBottomLine {
+    margin-top: 12px;
+    color: #5a5a5a;
+    font-size: 14px;
+}
+
+.ordersList {
+    overflow-y: auto;
+    height: 100%;
+}
