@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ecolenta/static/css/main.139f2548.chunk.css",
-    "main.js": "/ecolenta/static/js/main.cab9623e.chunk.js",
-    "main.js.map": "/ecolenta/static/js/main.cab9623e.chunk.js.map",
+    "main.js": "/ecolenta/static/js/main.a6fb70ef.chunk.js",
+    "main.js.map": "/ecolenta/static/js/main.a6fb70ef.chunk.js.map",
     "runtime-main.js": "/ecolenta/static/js/runtime-main.6d042968.js",
     "runtime-main.js.map": "/ecolenta/static/js/runtime-main.6d042968.js.map",
     "static/css/2.5c827a7d.chunk.css": "/ecolenta/static/css/2.5c827a7d.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.5c827a7d.chunk.css",
     "static/js/2.c0ac8ac5.chunk.js",
     "static/css/main.139f2548.chunk.css",
-    "static/js/main.cab9623e.chunk.js"
+    "static/js/main.a6fb70ef.chunk.js"
   ]
 }
