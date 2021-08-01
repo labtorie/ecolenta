@@ -207,7 +207,7 @@ const UserListItem = ({userId, onClick=()=>{}}) => {
 
     return <div className={styles.orderItem} onClick={onClick}>
         <div className={styles.orderHeader}>
-            {users?.[userId].name}
+            {users?.[userId]?.name}
         </div>
         <div className={styles.orderList}>
             {cart.map(({amount, name})=><div>{amount+' x '+name}</div>)}

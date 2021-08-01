@@ -11,9 +11,8 @@ const MainScreen = () => {
     const history = useHistory()
 
     const onCreate = async () => {
-        await initiateOrder(today())
-        const lastId = Object.keys(orders).pop()
-        history.push('/order/'+lastId)
+        const data = await initiateOrder(today())
+        history.push('/order/'+data?.name)
 
     }
 

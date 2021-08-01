@@ -54,7 +54,9 @@ export function useAppData () {
             await API.addProduct(productName).then(methods.getProducts)
         },
         initiateOrder: async (date) => {
-            await API.initiateOrder(date).then(methods.getOrders)
+            const data = await API.initiateOrder(date)
+            await methods.getOrders()
+            return data
         },
         closeOrder: async (orderId) => {
             await API.closeOrder(orderId).then(methods.getOrders)
