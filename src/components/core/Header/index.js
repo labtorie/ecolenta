@@ -9,7 +9,7 @@ const Header = ({title='Скоро обед!', goBack= null, rightButton = null 
         </div>
         <div className={styles.headerTitle}>{title}</div>
         <div className={styles.headerSide}>
-            {rightButton && <HeaderButton onClick={rightButton.onClick || rightButton.onPress} label={rightButton.label} />}
+            {rightButton && <HeaderButton disabled={rightButton?.disabled} onClick={rightButton.onClick || rightButton.onPress} label={rightButton.label} />}
         </div>
     </div>
 }

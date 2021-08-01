@@ -21,6 +21,8 @@ const OrderScreen = ({...props}) => {
         setProductSelectModalOpen(true)
     }
 
+    const doneButtonDisabled = !orders[id]?.data || Object.keys(orders[id]?.data || {})?.length === 0
+
     function onUserSelected (userId) {
         setSelectedUser(userId)
         setUserSelectModalOpen(false)
@@ -45,7 +47,10 @@ const OrderScreen = ({...props}) => {
        <UserSelect onClose={()=>setUserSelectModalOpen(false)} isOpen={isUserSelectModalOpen} onSelectUser={onUserSelected}/>
         <OrderDoneModal isOpen={isDoneModalOpen} onClose={()=>setDoneModalOpen(false)}/>
         <ProductSelectModal isOpen={isProductSelectModalOpen} userId={selectedUser} onAddOrDeleteProduct={()=>{}} onClose={onProductModalClose}/>
-        <Header title={getLocalDate(orders[id]?.date)} goBack={goBack} rightButton={{label: 'Готово', onPress:()=>setDoneModalOpen(true)}}/>
+        <Header title={getLocalDate(orders[id]?.date)}
+                goBack={goBack}
+                rightButton={{label: 'Заказать!', onPress:()=>setDoneModalOpen(true), disabled: doneButtonDisabled}}
+        />
         <div className={styles.content}>
             {!currentOrder.data ? <EmptyState onStart={()=>setUserSelectModalOpen(true)}/> :
                 <div>
@@ -254,7 +259,7 @@ const OrderDoneModal = ({isOpen, onClose}) => {
                     {getTotal().map(({amount, name}) => <div>{amount + ' x ' + name}</div>)}
                 </div>
             </div>
-            <HeaderButton label={'Экспорт в ToDoDoLi'} onClick={createToDoList}/>
+            <HeaderButton label={'Экспорт в ToDoDoLi'} onClick={createToDoList} height={50}/>
         </div>
     </SlideUpModal>
 }
