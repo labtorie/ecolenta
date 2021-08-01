@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import {createContext, useState} from 'react'
 import API from "../api";
 
 
@@ -55,6 +55,12 @@ export function useAppData () {
         },
         initiateOrder: async (date) => {
             await API.initiateOrder(date).then(methods.getOrders)
+        },
+        closeOrder: async (orderId) => {
+            await API.closeOrder(orderId).then(methods.getOrders)
+        },
+        addToCart: async (orderId, userId, productId, amount) => {
+            await API.editProductAmount(orderId, userId, productId, amount).then(methods.getOrders)
         }
 
     }

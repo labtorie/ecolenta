@@ -8,6 +8,7 @@ import MainScreen from "./components/MainScreen";
 import Div100vh from "react-div-100vh";
 import moment from "moment";
 import 'moment/locale/ru'
+import OrderScreen from "./components/OrderScreen";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
             <Splash isVisible={!appData.isLoaded}/>
             <HashRouter>
                 <Route exact path={'/'} component={MainScreen}/>
-                <Route path={'/order/:id'} render={() => <div>order</div>}/>
+                <Route path={'/order/:id'} component={OrderScreen}/>
             </HashRouter>
         </DataContext.Provider>
     </Div100vh>

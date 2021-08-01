@@ -3,9 +3,11 @@
     margin: 8px 16px;
     padding: 12px;
     border-radius: 4px;
+    transition-duration: .3s;
 }
 .orderWrapper:active {
     opacity: .6;
+    transition-duration: 0s;
 }
 .orderTopLine {
     display: flex;

@@ -1,0 +1,117 @@
+.emptyStateContainer {
+    height: calc(100vh - 102px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    padding: 16px;
+}
+
+.emptyStateIconAndText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 46px;
+}
+
+.emptyStateIconAndText i {
+    font-size: 180px;
+    color: #B8C8E1;
+}
+
+.modalHeader {
+    display: flex;
+    font-size: 24px;
+    justify-content: space-between;
+    font-weight: 700;
+    color: black;
+}
+
+.userItem {
+    border-bottom: solid 1px #e1e1e1;
+    padding: 16px 8px;
+    margin: 0 -8px;
+    transition-duration: .3s;
+}
+
+.userItem:active {
+    opacity: .4;
+    transition-duration: 0s;
+}
+
+.searchBar {
+    width: 100%;
+    outline: none !important;
+    border: none !important;
+    background-color: #ececec;
+    padding: 16px 12px;
+    margin: 12px -12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.list {
+    overflow-y: scroll;
+    width: 100%;
+    margin: 0 -24px;
+    flex: 1;
+    padding: 0 24px 64px;
+    overflow-x: hidden;
+}
+
+.section {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-top: 24px;
+}
+
+.productItem {
+    border-bottom: solid 1px #e1e1e1;
+    padding: 16px 8px;
+    margin: 0 -8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.productControllers {
+    display: flex;
+    border-radius: 16px;
+    background-color: #E5E5E5;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderItem {
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    padding: 16px;
+    transition-duration: .3s;
+}
+
+.orderItem:active {
+    opacity: .6;
+    transition-duration: 0s;
+}
+
+.orderHeader {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.orderList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}

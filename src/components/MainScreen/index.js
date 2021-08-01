@@ -3,7 +3,6 @@ import Header from "../core/Header";
 import DataContext from "../../data";
 import styles from './styles.module.css'
 import {useHistory} from 'react-router-dom'
-import moment from "moment";
 import {getLocalDate, today} from "../../utils";
 
 const MainScreen = () => {
@@ -21,7 +20,7 @@ const MainScreen = () => {
     return <div style={{height: '100%'}}>
         <Header title={'Заказы'} rightButton={{label: 'Создать', onClick: onCreate}}/>
         <div className={styles.ordersList}>
-            {mapOrders(orders, users).map(order=><OrderItem order={order}/>)}
+            {mapOrders(orders, users).map(order=><OrderItem key={order.id} order={order}/>)}
         </div>
     </div>
 }

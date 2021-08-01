@@ -56,10 +56,12 @@ const API = {
         }
         return post('/orders.json', data)
     },
-
+    closeOrder: (orderId) =>{
+        return api.patch(`/orders/${orderId}.json`, {isClosed: true})
+    },
     editProductAmount: async (orderId, userId, productId, amount=1) => {
         if (amount === 0)
-            return this.removeUserProduct(orderId, userId, productId)
+            return API.removeUserProduct(orderId, userId, productId)
 
         return put(`/orders/${orderId}/data/${userId}/${productId}.json`, amount)
     },
@@ -71,3 +73,23 @@ const API = {
 }
 
 export default API
+
+
+const instance = axios.create(
+    {
+        baseURL: "https://todo-list-4b27a.firebaseio.com/",
+        withCredentials: false
+    }
+)
+
+export const ToDoDoLi = {
+    createList: (date) => {
+        return instance.post('storage.json', JSON.stringify({name: date, color: '#1A4D9E', items: []})).then(r=>r.data)
+    },
+    addTask: (id, text) => {
+        return instance.post(`storage/${id}/items.json`, {text: text, done: false}).then(r=>r.data)
+    },
+}
+
+
+window.todo = ToDoDoLi

@@ -9,13 +9,13 @@ const Header = ({title='Скоро обед!', goBack= null, rightButton = null 
         </div>
         <div className={styles.headerTitle}>{title}</div>
         <div className={styles.headerSide}>
-            {rightButton && <HeaderButton onClick={rightButton.onClick} label={rightButton.label} />}
+            {rightButton && <HeaderButton onClick={rightButton.onClick || rightButton.onPress} label={rightButton.label} />}
         </div>
     </div>
 }
 
-export const HeaderButton = ({label='button', onClick=()=>{}, ...props}) => {
-    return <button className={styles.headerButton} onClick={onClick} {...props}>{label}</button>
+export const HeaderButton = ({label='button', onClick=()=>{}, height=30, isProductButton=false, ...props}) => {
+    return <button className={isProductButton ? styles.productButton :styles.headerButton} style={{height, borderRadius: height / 2}} onClick={onClick} {...props}>{label}</button>
 }
 
 export default Header
