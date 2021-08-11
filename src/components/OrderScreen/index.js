@@ -43,7 +43,7 @@ const OrderScreen = ({...props}) => {
     function goBack() {
         history.goBack()
     }
-    return <div>
+    return <div style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
        <UserSelect onClose={()=>setUserSelectModalOpen(false)} isOpen={isUserSelectModalOpen} onSelectUser={onUserSelected}/>
         <OrderDoneModal isOpen={isDoneModalOpen} onClose={()=>setDoneModalOpen(false)}/>
         <ProductSelectModal isOpen={isProductSelectModalOpen} userId={selectedUser} onAddOrDeleteProduct={()=>{}} onClose={onProductModalClose}/>

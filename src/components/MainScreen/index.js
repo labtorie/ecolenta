@@ -16,7 +16,7 @@ const MainScreen = () => {
 
     }
 
-    return <div style={{height: '100%'}}>
+    return <div style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
         <Header title={'Заказы'} rightButton={{label: 'Создать', onClick: onCreate}}/>
         <div className={styles.ordersList}>
             {mapOrders(orders, users).map(order=><OrderItem key={order.id} order={order}/>)}
